@@ -5,6 +5,8 @@ using System;
 namespace RegressionLab.Tests;
 
 [TestClass]
+public class StringNormalizerTests
+{
     [TestMethod]
     public void NormalizeProductCode_TrimsAndUppercases()
     {
