@@ -2,14 +2,15 @@ namespace RegressionLab;
 
 public static class PriceCalculator
 {
-    // BUGS: 1) НДС применяется ДО скидки 2) Банковское округление (ToEven) и 3) позволяет незаметно вводить неверные данные.
+    // BUGS: 1) РќР”РЎ РїСЂРёРјРµРЅСЏРµС‚СЃСЏ Р”Рћ СЃРєРёРґРєРё 2) Р‘Р°РЅРєРѕРІСЃРєРѕРµ РѕРєСЂСѓРіР»РµРЅРёРµ (ToEven) Рё 3) РїРѕР·РІРѕР»СЏРµС‚ РЅРµР·Р°РјРµС‚РЅРѕ РІРІРѕРґРёС‚СЊ РЅРµРІРµСЂРЅС‹Рµ РґР°РЅРЅС‹Рµ.
     public static decimal CalculateFinal(decimal netPrice, decimal vatRate, decimal discountPercent)
     {
-        // Bug: отсутствует проверка
+        // Bug: РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ РїСЂРѕРІРµСЂРєР°
         decimal vat = netPrice * vatRate;
         decimal gross = netPrice + vat;
         decimal afterDiscount = gross * (1 - discountPercent / 100m);
-        // Bug: округление ToEven
+        // Bug: РѕРєСЂСѓРіР»РµРЅРёРµ ToEven
         return Math.Round(afterDiscount, 2, MidpointRounding.ToEven);
     }
 }
+
