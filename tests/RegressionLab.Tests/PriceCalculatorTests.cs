@@ -5,6 +5,15 @@ using System;
 namespace RegressionLab.Tests;
 
 [TestClass]
+public class PriceCalculatorTests
+{
+    [TestMethod]
+    public void CalculateFinal_DiscountBeforeVat_RoundsAwayFromZero()
+    {
+        decimal result = PriceCalculator.CalculateFinal(100m, 0.20m, 15m);
+        Assert.AreEqual(102.00m, result);
+    }
+
     [TestMethod]
     public void CalculateFinal_HandlesMidpointCorrectly()
     {
