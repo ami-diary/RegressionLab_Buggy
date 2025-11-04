@@ -2,7 +2,7 @@ namespace RegressionLab;
 
 public class LoyaltyPoints
 {
-    // BUGS: нет срока действия; сжигание LIFO; неверный баланс.
+    // BUGS: РЅРµС‚ СЃСЂРѕРєР° РґРµР№СЃС‚РІРёСЏ; СЃР¶РёРіР°РЅРёРµ LIFO; РЅРµРІРµСЂРЅС‹Р№ Р±Р°Р»Р°РЅСЃ.
     private readonly Stack<(DateTime month, int points)> _stack = new();
 
     public void AddPoints(DateTime month, int points)
@@ -27,7 +27,7 @@ public class LoyaltyPoints
 
     public int Balance(DateTime onMonth)
     {
-        // Bug: просто просуммировать все
+        // Bug: РїСЂРѕСЃС‚Рѕ РїСЂРѕСЃСѓРјРјРёСЂРѕРІР°С‚СЊ РІСЃРµ
         return _stack.Sum(x => x.points);
     }
 }
