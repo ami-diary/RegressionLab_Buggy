@@ -20,3 +20,9 @@ public class TaxCalculatorTests
         Assert.AreEqual(6000m, TaxCalculator.ComputeAnnualTax(60_000m));
     }
 
+    [TestMethod]
+    public void ComputeAnnualTax_CeilingApplied()
+    {
+        Assert.AreEqual(25_000m, TaxCalculator.ComputeAnnualTax(500_000m));
+    }
+}
