@@ -2,12 +2,12 @@ namespace RegressionLab;
 
 public static class DateUtils
 {
-    // BUGS: íåò íîğìàëèçàöèè èíâåğòèğîâàííûõ äèàïàçîíîâ; âîçâğàùåíî îòğèöàòåëüíîå ïåğåêğûòèå; îêğóãëÿåò ìèíóòû.
+    // BUGS: Ğ½ĞµÑ‚ Ğ½Ğ¾Ñ€Ğ¼Ğ°Ğ»Ğ¸Ğ·Ğ°Ñ†Ğ¸Ğ¸ Ğ¸Ğ½Ğ²ĞµÑ€Ñ‚Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½Ğ½Ñ‹Ñ… Ğ´Ğ¸Ğ°Ğ¿Ğ°Ğ·Ğ¾Ğ½Ğ¾Ğ²; Ğ²Ğ¾Ğ·Ğ²Ñ€Ğ°Ñ‰ĞµĞ½Ğ¾ Ğ¾Ñ‚Ñ€Ğ¸Ñ†Ğ°Ñ‚ĞµĞ»ÑŒĞ½Ğ¾Ğµ Ğ¿ĞµÑ€ĞµĞºÑ€Ñ‹Ñ‚Ğ¸Ğµ; Ğ¾ĞºÑ€ÑƒĞ³Ğ»ÑĞµÑ‚ Ğ¼Ğ¸Ğ½ÑƒÑ‚Ñ‹.
     public static int OverlapMinutes(DateTime start1, DateTime end1, DateTime start2, DateTime end2)
     {
         var start = start1 > start2 ? start1 : start2;
         var end = end1 < end2 ? end1 : end2;
-        // Bug: âîçâğàùàòü îòğèöàòåëüíûå çíà÷åíèÿ è îêğóãëÿòü â áîëüøóş ñòîğîíó
+        // Bug: Ğ²Ğ¾Ğ·Ğ²Ñ€Ğ°Ñ‰Ğ°Ñ‚ÑŒ Ğ¾Ñ‚Ñ€Ğ¸Ñ†Ğ°Ñ‚ĞµĞ»ÑŒĞ½Ñ‹Ğµ Ğ·Ğ½Ğ°Ñ‡ĞµĞ½Ğ¸Ñ Ğ¸ Ğ¾ĞºÑ€ÑƒĞ³Ğ»ÑÑ‚ÑŒ Ğ² Ğ±Ğ¾Ğ»ÑŒÑˆÑƒÑ ÑÑ‚Ğ¾Ñ€Ğ¾Ğ½Ñƒ
         return (int)Math.Ceiling((end - start).TotalMinutes);
     }
 }
