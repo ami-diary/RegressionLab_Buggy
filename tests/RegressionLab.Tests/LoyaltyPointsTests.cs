@@ -1,6 +1,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RegressionLab;
-using SysterThreeMonths_FifoSpend()
+using System;
+
+namespace RegressionLab.Tests;
+
+[TestClass]
+public class LoyaltyPointsTests
+{
+    [TestMethod]
+    public void PointsExpireAfterThreeMonths_FifoSpend()
     {
         var lp = new LoyaltyPoints();
         lp.AddPoints(new DateTime(2025, 1, 1), 100);
