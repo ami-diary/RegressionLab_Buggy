@@ -2,11 +2,12 @@ namespace RegressionLab;
 
 public static class TaxCalculator
 {
-    // BUGS: неправильная математика в скобках, ограничение не применено.
+    // BUGS: РЅРµРїСЂР°РІРёР»СЊРЅР°СЏ РјР°С‚РµРјР°С‚РёРєР° РІ СЃРєРѕР±РєР°С…, РѕРіСЂР°РЅРёС‡РµРЅРёРµ РЅРµ РїСЂРёРјРµРЅРµРЅРѕ.
     public static decimal ComputeAnnualTax(decimal income)
     {
         if (income <= 0) return 0;
-        // Bug: фиксированная ставка 15% без ограничения
+        // Bug: С„РёРєСЃРёСЂРѕРІР°РЅРЅР°СЏ СЃС‚Р°РІРєР° 15% Р±РµР· РѕРіСЂР°РЅРёС‡РµРЅРёСЏ
         return income * 0.15m;
     }
 }
+
